@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="Add_data_for_address" author="mohamed shosha">
+        <insert tableName="address">
+            <column name="address_id" value="9c8de812-7da1-4303-aa3d-56c6b797a53e"/>
+            <column name="street_address" value="Elmasaken"/>
+            <column name="city" value="cairo"/>
+            <column name="state" value="Elmansora"/>
+            <column name="postal_code" value="145878c"/>
+            <column name="country" value="Egypt"/>
+        </insert>
+        <rollback>
+            <sql>DELETE FROM address WHERE address_id = '9c8de812-7da1-4303-aa3d-56c6b797a53e'</sql>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="Add_data_for_course" author="mohamed shosha">
+        <insert tableName="course">
+            <column name="course_id" value="d92e160f-b739-48be-9e5c-d68c1de06389"/>
+            <column name="course_name" value="Advanced java and spring boot with docker"/>
+            <column name="course_code" value="784823846"/>
+            <column name="description" value="This course for all levels of students"/>
+        </insert>
+        <rollback>
+            <sql>DELETE FROM course WHERE course_id = 'd92e160f-b739-48be-9e5c-d68c1de06389'</sql>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="Add_data_for_instructor" author="Mohamed shosha">
+        <insert tableName="instructor">
+            <column name="instructor_id" value="6bd15419-2bc6-42da-adcc-4c61e361b861"/>
+            <column name="first_name" value="Amany"/>
+            <column name="last_name" value="elsayed"/>
+            <column name="date_of_birth" valueDate="1990-01-01"/>
+            <column name="email" value="amanyelsayed253@gmail.com"/>
+            <column name="address_id" value="9c8de812-7da1-4303-aa3d-56c6b797a53e"/>
+            <column name="course_id" value="d92e160f-b739-48be-9e5c-d68c1de06389"/>
+        </insert>
+        <rollback>
+            <sql>DELETE FROM instructor WHERE instructor_id = '6bd15419-2bc6-42da-adcc-4c61e361b861'</sql>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="Add_foreign_key_course_id" author="mohamed shosha">
+        <addColumn tableName="instructor">
+            <column name="course_id" type="uuid"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="instructor" baseColumnNames="course_id"
+                                 constraintName="foreign_key_instructor_course_id"
+                                 referencedTableName="course"
+                                 referencedColumnNames="course_id"/>
+        <rollback>
+            <dropColumn tableName="instructor" columnName="course_id"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
