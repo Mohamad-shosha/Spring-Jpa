@@ -9,7 +9,7 @@ This project demonstrates the use of Java Persistence API (JPA) for database ope
 - [Technologies](#technologies)
 - [Demo](#demo)
 - [Resources](#resources)
-Q
+
 ## 🚀 Features
 
 - *Create, Read, Update, and Delete* operations for Instructor, Address, and Course.
@@ -118,4 +118,3 @@ Run your Spring Boot application. The server will start at http://localhost:8080
 - [Liquibase Documentation](https://www.liquibase.org/documentation/index.html)
 - [Postman Documentation](https://learning.postman.com/docs/)
 
-Feel free to explore, contribute, or reach out with any questions!
