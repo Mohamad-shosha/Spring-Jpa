@@ -3,10 +3,10 @@ version: '2.3'
 services:
   mysql:
     container_name: mysql-container
+    restart: always
     image: 'mysql'
     ports:
       - 3306:3306
-    restart: always
     networks:
       - my_network
     environment:
@@ -15,13 +15,14 @@ services:
 
   app:
     container_name: instructor_app
+    restart: always
     build: .
-    depends_on:
-      - mysql
-    ports:
-      - "8080:8080"
     networks:
       - my_network
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
 
 networks:
   my_network:
