@@ -1,0 +1,27 @@
+version: '2.3'
+
+services:
+  mysql:
+    container_name: mysql-container
+    image: 'mysql'
+    ports:
+      - 3306:3306
+    restart: always
+    networks:
+      - my_network
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=Nmnmnm6@@'
+      - 'MYSQL_DATABASE=mydb'
+
+  app:
+    container_name: instructor_app
+    build: .
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    networks:
+      - my_network
+
+networks:
+  my_network:
