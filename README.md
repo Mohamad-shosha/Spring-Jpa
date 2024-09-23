@@ -1,6 +1,6 @@
 # Spring-Jpa
 
-This project demonstrates the use of Java Persistence API (JPA) for database operations and Hibernate for Object-Relational Mapping (ORM). It provides seamless backend integration for managing and querying data, featuring three main entities: Instructor, Address, and Course. Liquibase is used for database schema management, and Postman is used as a client for testing the API.
+This project demonstrates the use of Java Persistence API (JPA) for database operations and Hibernate for Object-Relational Mapping (ORM). It provides seamless backend integration for managing and querying data, featuring three main entities: Instructor, Address, and Course. Liquibase is used for database schema management, and Postman is utilized as a client for testing the API.
 
 ## 📝 Table of Contents
 - [Features](#features)
@@ -8,6 +8,7 @@ This project demonstrates the use of Java Persistence API (JPA) for database ope
 - [Getting Started](#getting-started)
 - [Technologies](#technologies)
 - [Demo](#demo)
+- [Docker](#docker)
 - [Resources](#resources)
 
 ## 🚀 Features
@@ -70,8 +71,8 @@ Extract the downloaded zip file and import the project into your preferred IDE.
 
 ### Step 3: Configure Database and Liquibase
 
-- *Database Configuration*: Update application.properties or application.yml with your database connection details.
-- *Liquibase Configuration*: Configure liquibase in your application.properties and add your changelog files in src/main/resources/db/changelog.
+- *Database Configuration*: Update `application.properties` or `application.yml` with your database connection details.
+- *Liquibase Configuration*: Configure Liquibase in your `application.properties` and add your changelog files in `src/main/resources/db/changelog`.
 
 ### Step 4: Define Entities
 
@@ -91,7 +92,7 @@ Use Postman to test your API endpoints by sending requests to create, read, upda
 
 ### Step 8: Run Your Application
 
-Run your Spring Boot application. The server will start at http://localhost:8080.
+Run your Spring Boot application. The server will start at `http://localhost:8080`.
 
 ---
 
@@ -110,6 +111,14 @@ Run your Spring Boot application. The server will start at http://localhost:8080
 [Watch the demo video here](https://github.com/your-repo/demo-link).
 
 ---
+
+## 🐳 Docker
+
+To push your Docker image to Docker Hub, use the following command:
+
+```bash
+docker push mohamadshosha/spring-jpa-app:tagname
+```
 
 ## 🗂 Resources
 
