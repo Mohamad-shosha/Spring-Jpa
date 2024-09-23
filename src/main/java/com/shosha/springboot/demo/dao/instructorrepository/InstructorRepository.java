@@ -39,5 +39,11 @@ public interface InstructorRepository extends JpaRepository<Instructor, String>,
      */
     Optional<Instructor> findByEmail(String email);
 
+    /**
+     * Finds an instructor by the associated course name.
+     *
+     * @param courseName the name of the course to search for
+     * @return an Optional containing the found Instructor, or an empty Optional if no instructor is found
+     */
     Optional<Instructor> findByCourseName(String courseName);
 }
