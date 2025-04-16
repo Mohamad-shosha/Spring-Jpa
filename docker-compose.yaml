@@ -4,14 +4,14 @@ services:
   mysql:
     container_name: mysql-container
     restart: always
-    image: 'mysql'
+    image: mysql
     ports:
-      - 3306:3306
+      - 3307:3306
     networks:
       - my_network
     environment:
-      - 'MYSQL_ROOT_PASSWORD=Nmnmnm6@@'
-      - 'MYSQL_DATABASE=mydb'
+      - MYSQL_ROOT_PASSWORD=Nmnmnm6@@
+      - MYSQL_DATABASE=mydb
 
   app:
     container_name: instructor_app

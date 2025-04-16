@@ -14,6 +14,8 @@ import java.util.Optional;
  */
 public interface InstructorService {
 
+    List<Instructor> findAllInstructors();
+
     /**
      * Retrieves a list of all instructors.
      *
@@ -117,4 +119,14 @@ public interface InstructorService {
      * @throws InstructorNotFoundException if no instructor is found for the provided course name
      */
     AddressDto findAddressByCourseName(String courseName) throws InstructorNotFoundException;
+
+    /**
+     * Checks if the given identifier is null or not.
+     *
+     * @param id the identifier to be checked
+     * @return true if the identifier is null or empty; false otherwise
+     * @throws InstructorNotFoundException if the identifier does not correspond to any existing instructor
+     */
+    boolean isNullOrNot(String id) throws InstructorNotFoundException;
+
 }

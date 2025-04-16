@@ -29,6 +29,13 @@ public class InstructorServiceImp implements InstructorService {
     }
 
     @Override
+    public List<Instructor> findAllInstructors() {
+        List<Instructor> instructors = instructorRepository.findAll();
+        log.info("The list of instructors is {}", instructors);
+        return instructors;
+    }
+
+    @Override
     public List<InstructorDto> findAll() {
         List<Instructor> instructors = instructorRepository.findAll();
         log.info("The list of instructors is {}", instructors);
@@ -154,5 +161,11 @@ public class InstructorServiceImp implements InstructorService {
         }
         return AddressTransformation.transformToAddressDto(instructorRepository.
                 getAddressByCourseName(courseName));
+    }
+
+    @Override
+    public boolean isNullOrNot(String id) throws InstructorNotFoundException {
+        Optional<Instructor> instructor = instructorRepository.findById(id);
+        return instructor.isPresent();
     }
 }
